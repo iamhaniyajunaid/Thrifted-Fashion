@@ -70,7 +70,7 @@
             </div>
             <div class="flex  items-center">
                 <div class="google-wrapper">
-                    <img src="{{ Vite::asset('resources/images/google-icon.png') }}" class="google-icon" alt="">
+                    <img src="{{ asset('resources/images/google-icon.png') }}" class="google-icon" alt="">
                 </div>
                 <a href="/auth/google"
                     class=" btn btn--outline-dark w-full google-btn h-75 ms-2  text-center rounded-lg ">Login

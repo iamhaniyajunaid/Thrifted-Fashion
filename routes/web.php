@@ -33,3 +33,30 @@ Route::get('/user', function () {
         return view('dashboard');
     })->name('dashboard');
 });
+Route::get('admin-add-user', function () {
+    return view('admin.pages.add-user');
+});
+Route::get('admin-reports', function () {
+    return view('admin.pages.reports');
+});
+Route::get('admin-add-product', function () {
+    return view('admin.pages.add-product');
+});
+Route::get('admin-index', function () {
+    return view('admin.pages.index');
+});
+Route::get('admin-profile', function () {
+    return view('admin.pages.profile');
+});
+Route::get('admin-settings', function () {
+    return view('admin.pages.settings');
+});
+Route::get('admin-manage-orders', function () {
+    return view('admin.pages.manage-orders');
+});
+Route::get('admin-user-details', function () {
+    return view('admin.pages.user-details');
+});
+Route::get('admin-users', function () {
+    return view('admin.pages.users');
+});
