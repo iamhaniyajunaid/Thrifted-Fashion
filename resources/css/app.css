@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+[x-cloak] {
+    display: none;
+}
+:root{
+    /*===========theme========*/
+    --forest-green: #3B5339;
+  --sage-green: #C8D6B9;
+  --warm-cream: #F5F2EB;
+  --pure-white: #FFFFFF;
+  --charcoal-slate: #2C352D;
+
+    /*===========font========*/
+   --font-serif: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  --font-sans: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+
+
+}
+.body{
+    background-color: var(--warm-cream);
+}
+
+.form-head h1{
+    color: var(--charcoal-slate);
+    font-family: var(--font-sans);
+    font-size: 2.5rem;
+}
+.form-head p{
+     color: var(--charcoal-slate);
+    font-family: var(--font-sans);
+
+}
+.form-label{
+    color :var(--forest-green);
+    font-size: 1rem;
+    font-family: var(--font-serif);
+    font-weight: 550;
+}
+.input-wrapper{
+    position: relative;
+}
+.input-wrapper i{
+    position: absolute;
+    top: 30%;
+    left: 13px;
+    color: var(--charcoal-slate);
+}
+.input-wrapper .form-input
+{
+    padding-left: 40px;
+    border: 2px solid var(--warm-cream) !important;
+
+    border-radius: 10px;
+}
+.form-input:hover, 
+.form-input:focus, 
+.form-input:active{
+    --tw-ring-shadow: none !important;
+    border: 2px solid var(--forest-green) !important;
+}
+.form-checkbox{
+    color: var(--charcoal-slate);
+}
+.form-checkbox:hover, 
+.form-checkbox:focus, 
+.form-checkbox:active{
+    --tw-ring-shadow: none !important;
+    border: 1px solid var(--forest-green) !important;
+}
+.form-forget:focus{
+    --tw-ring-shadow: none !important;
+color: var(--charcoal-slate);
+
+}
+.form-btn {
+    background-color: var(--forest-green);
+    color: var(--pure-white);
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-family: var(--font-serif);
+
+}
+.form-btn:hover,
+.form-btn:focus,
+.form-btn:active{
+    background-color: var(--charcoal-slate);
+    color: var(--pure-white);
+
+}
+.google-wrapper {
+    position: relative;
+    left: 30%;
+    color: var(--charcoal-slate);
+    
+}
+.google-wrapper .google-icon{
+    width: 25px;
+}
+
+.google-btn {
+    background-color: var(--pure-white);
+    color: var(--charcoal-slate);
+    border-radius: 25px;
+    font-size: 1rem;
+    border: 2px solid rgba(145, 139, 106, 0.966);
+    font-family: var(--font-serif);
+    font-weight: 600;
+    padding-left: 5px;
+    padding-top:12px ;
+    padding-bottom: 12px;
+    
+
+}
+.google-btn:hover ,
+.google-btn:active, 
+.google-btn:focus{
+    background-color: var(--forest-green);
+    color: var(--warm-cream);
+    border: none !important;
+
+}
+.form-reg{
+    position: relative;
+    left: 90px;
+    top: 15px;
+}
+ /* PROFILE */
+.prof-head{
+    font-family: var(--font-sans);
+    font-size: 2rem;
+    font-weight: 600;
+}
+.auth-tabs{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid var(--forest-green);
+    margin-bottom: 30px;
+}
+.tab-btn{
+    position: relative;
+    padding: 12px 35px;
+    font-family: var(--font-serif);
+    cursor: pointer;
+}
+
