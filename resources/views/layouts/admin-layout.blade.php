@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/assets-admin/css/style.css">
 </head>
 
-<body>
+<body>  
   <div class="admin-shell">
     <div class="sidebar-backdrop" data-sidebar-close></div>
 
@@ -20,7 +20,7 @@
       <div class="sidebar-header">
         <a class="brand-mark" href="index" aria-label="adminHMD dashboard">
           <span class="brand-copy">
-            <span class="brand-title"><a href=""><img src="{{asset('assets-admin/images/logo-dark.jpg')}}" class="w-100" alt=""></a></span>
+            <span class="brand-title"><a href=""><img src="{{asset('assets-admin/images/logo.png')}}" class="w-100" alt=""></a></span>
           </span>
         </a>
       </div>
@@ -30,13 +30,13 @@
           <span class="nav-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></span>
           <span class="nav-text">Dashboard</span>
         </a>
-        <a href="/admin-users" class="nav-link {{request()->is('admin-users')?'active':''}}">
+        <a class="nav-link {{request()->is('admin-users')?'active':''}}" href="{{ route('admin-users') }}">
           <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
           <span class="nav-text">Users</span>
         </a>
-        <a href="/admin-add-user" class="nav-link {{request()->is('admin-add-user')?'active':''}}">
+        <a class="nav-link {{request()->is('admin-feedback')?'active':''}}" href="{{ route('admin-feedback')}}" >
           <span class="nav-icon"><i class="bi bi-person-plus" aria-hidden="true"></i></span>
-          <span class="nav-text">Add User</span>
+          <span class="nav-text">Feedback</span>
         </a>
         <a href="/admin-profile" class="nav-link {{request()->is('admin-profile')?'active':''}}">
           <span class="nav-icon"><i class="bi bi-person-badge" aria-hidden="true"></i></span>
@@ -46,11 +46,11 @@
           <span class="nav-icon"><i class="bi bi-bar-chart-line" aria-hidden="true"></i></span>
           <span class="nav-text">Reports</span>
         </a>
-        <a class="nav-link {{request()->is('admin-manage-orders')?'active':''}}" href="/admin-manage-orders">
+        <a class="nav-link {{request()->is('admin-manage-orders')?'active':''}}" href="{{ route('admin-orders') }}">
           <span class="nav-icon"><i class="bi bi-table" aria-hidden="true"></i></span>
           <span class="nav-text">Manage Orders</span>
         </a>
-        <a class="nav-link {{request()->is('admin-add-product')?'active':''}}" href="/admin-add-product">
+        <a class="nav-link {{request()->is('admin-add-product')?'active':''}}" href="{{ route('admin-product') }}">
           <span class="nav-icon"><i class="bi bi-ui-checks-grid" aria-hidden="true"></i></span>
           <span class="nav-text">Add Product</span>
         </a>

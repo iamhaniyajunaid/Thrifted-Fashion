@@ -1,4 +1,4 @@
-@extends('admin.includes.layout')
+@extends('layouts.admin-layout')
 @section('content')
     <main class="dashboard-content">
         <div class="container-fluid px-3 px-lg-4 py-4">
@@ -11,8 +11,6 @@
                         <p class="text-muted mb-0">Review accounts, roles, account status, and team ownership.</p>
                     </div>
                 </div>
-                <div class="heading-actions"><a class="btn btn-primary btn-sm"
-                        href="admin-add-user"><i class="bi bi-person-plus" aria-hidden="true"></i> Add User</a></div>
             </div>
 
             <section class="row g-3 mt-1" aria-label="User summary">
@@ -82,27 +80,45 @@
                     <div class="d-flex flex-wrap gap-2">
                         <input class="form-control form-control-sm table-search" type="search" placeholder="Search users"
                             data-table-search="usersTable" aria-label="Search users">
-                        <a class="btn btn-primary btn-sm" href="admin-add-user"><i class="bi bi-person-plus"
-                                aria-hidden="true"></i> Add User</a>
                     </div>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-middle mb-0" id="usersTable" data-searchable-table>
                         <thead>
                             <tr>
-                                <th scope="col">Nmae</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone</th>
                                 <th scope="col">Role</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Joined</th>
-                                <th scope="col" class="text-end">Action</th>
+                                <th scope="col">Action</th>
                             </tr>
                         </thead>
-                        <tbody>
 
+                        <tbody>
+                            @foreach ($users as $user)
+                                <tr>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->phone }}</td>
+                                    <td>{{ $user->role }}</td>
+                                    <td>
+                                        <form action="{{ route('editUser') }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ $user->id }}">
+                                            <input type="hidden" name="action" value="edit">
+                                            <button type="submit" class="btn btn-primary">Edit</button>
+                                        </form>
+                                        <form action="{{ route('deleteUser') }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ $user->id }}">
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
-                
             </section>
         </div>
     </main>
