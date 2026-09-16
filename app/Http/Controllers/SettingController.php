@@ -12,4 +12,15 @@ class SettingController extends Controller
         return view ('admin.settings',compact('settings'));
     }
     
+    public function update(Request $request){
+foreach($request->except('_token')as $key=>$value){
+
+SiteSetting::updateOrCreate(
+    ['key'=> $key],
+    ['value'=> $value]
+
+);
+}
+return back()->with('success','settings updated successfully.');
+}
 }
