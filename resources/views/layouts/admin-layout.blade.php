@@ -73,9 +73,10 @@
             <span></span>
             <span></span>
           </button>
+          <span class="brand-title w-25"><a href=""><img src="{{asset('assets-admin/images/logo.png')}}" class="ms-3 img-fluid d-block d-lg-none" alt=""></a></span>
 
           <div class="navbar-actions ms-auto">
-            <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme" title="Switch color theme">
+            <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme" title="Switch color theme">        
               <i class="bi bi-moon-stars" data-theme-icon aria-hidden="true"></i>
             </button>
             <div class="dropdown">
