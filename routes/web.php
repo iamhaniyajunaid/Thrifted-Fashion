@@ -5,10 +5,20 @@ use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\LoginResponse;
 use App\Http\Controllers\AdminController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+// Home
+Route::get('/', function () {
+    return view('admin.users.index');
+});
+// LOG OUT
+Route::get('/admin/sign-out', function () {
+    return view('admin.sign-out');
+})->name('sign-out');
+
+Route::post('/logout', [LoginResponse::class, 'Logout'])
+        ->name('logout');
+
+// Google Authentication
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
 
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
@@ -71,7 +81,7 @@ Route::post('deleteFeedback', [AdminController::class, 'deleteFeedback'])
     ->name('deleteFeedback');
 
 
-// Authentication Routes
+// Authentication & Role Based Routes
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -107,3 +117,4 @@ Route::get('admin-settings', function () {
 Route::get('admin-manage-orders', function () {
     return view('admin.manage-orders');
 });
+
