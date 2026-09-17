@@ -18,7 +18,6 @@ class GoogleController extends Controller
     public function handleGoogleCallback()
     {
         try {
-
             $googleUser = Socialite::driver('google')
                 ->stateless()
                 ->user();
@@ -26,14 +25,11 @@ class GoogleController extends Controller
             $user = User::where('email', $googleUser->email)->first();
 
             if ($user) {
-
                 if (!$user->google_id) {
                     $user->google_id = $googleUser->id;
                     $user->save();
                 }
-
             } else {
-
                 $user = User::create([
                     'name' => $googleUser->name,
                     'email' => $googleUser->email,
@@ -41,23 +37,23 @@ class GoogleController extends Controller
                     'password' => Hash::make(Str::random(24)),
                 ]);
             }
-           
 
             Auth::login($user);
-             if(strtolower()($user['role'] ==  'admin')){
+
+            if (strtolower($user->role) === 'admin') {
                 return redirect('/admin');
             }
-            elseif(strtolower()($user['role'] == 'user')){
-                return redirect('/user');
 
+            if (strtolower($user->role) === 'user') {
+                return redirect('/user');
             }
-else{
+
             return redirect()->intended('dashboard');
 
-}
         } catch (\Exception $e) {
-
             dd($e->getMessage());
         }
     }
+   
+
 }

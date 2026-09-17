@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\LoginResponse;
+
+
 
 
 Route::get('/', function () {
@@ -22,14 +25,13 @@ Route::middleware([
 
     Route::get('/admin', function () {
     return view('admin');
+})->middleware('role:admin');
 
-
-});
 Route::get('/user', function () {
     return view('user');
-});
+})->middleware('role:user');
 
-    Route::get('/dashboard' , function () {
-        return view('dashboard');
-    })->name('dashboard');
+Route::get('/dashboard' , [LoginResponse::class, 'restriction'])
+      ->name('dashboard');
+      
 });
