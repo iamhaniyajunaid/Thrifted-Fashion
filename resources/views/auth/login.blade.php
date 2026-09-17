@@ -76,8 +76,6 @@
                     class=" btn btn--outline-dark w-full google-btn h-75 ms-2  text-center rounded-lg ">Login
                     With Google</a>
 
-
-
             </div>
             <a href="/register" class="text-center fw-bold form-reg "><span class="fw-light"> Dont have an account?
                 </span>Register</a></p>
