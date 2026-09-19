@@ -48,7 +48,7 @@
                                             <input type="hidden" name="action" value="edit">
                                             <button type="submit" class="btn btn-primary">Edit</button>
                                         </form>
-                                        <form action="{{ route('deleteFeedback') }}" method="POST" class="d-inline">
+                                        <form action="{{ route('deleteFeedback') }}" method="POST" class="d-inline delete-form">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $item->id }}">
                                             <button type="submit" class="btn btn-danger">Delete</button>

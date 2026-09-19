@@ -109,7 +109,7 @@
                                             <input type="hidden" name="action" value="edit">
                                             <button type="submit" class="btn btn-primary">Edit</button>
                                         </form>
-                                        <form action="{{ route('deleteUser') }}" method="POST" style="display:inline;">
+                                        <form action="{{ route('deleteUser') }}" method="POST"  class="delete-form" style="display:inline;">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $user->id }}">
                                             <button type="submit" class="btn btn-danger">Delete</button>

@@ -146,6 +146,42 @@
 
     <script src="/assets-admin/js/bootstrap.bundle.min.js"></script>
     <script src="/assets-admin/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Delete confirmation 
+            document.querySelectorAll('.delete-form').forEach(function(form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: 'This data will be permanently deleted.',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#dc3545',
+                        cancelButtonColor: '#6c757d',
+                        confirmButtonText: 'Yes, delete it!',
+                        cancelButtonText: 'Cancel'
+                    }).then(function(result) {
+                        if (result.isConfirmed) {
+                            form.submit();
+                        }
+                    });
+                });
+            });
+            // Success alert for ALL delete operations
+            @if (session('success'))
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Deleted Successfully!',
+                    text: @json(session('success')),
+                    confirmButtonText: 'OK',
+                    timer: 2000,
+                    timerProgressBar: true
+                });
+            @endif
+        });
+    </script>
 </body>
 
 </html>
