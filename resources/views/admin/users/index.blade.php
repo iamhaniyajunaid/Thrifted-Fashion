@@ -12,59 +12,60 @@
                     </div>
                 </div>
             </div>
-
             <section class="row g-3 mt-1" aria-label="User summary">
                 <div class="col-12 col-sm-6 col-xl-3">
                     <article class="metric-card metric-primary">
                         <div class="metric-top">
                             <span class="metric-label">Total Users</span>
-                            <span class="metric-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                            <span class="metric-icon">
+                                <i class="bi bi-people"></i>
+                            </span>
                         </div>
-                        <div class="metric-value">8,742</div>
+                        <div class="metric-value">{{ number_format($userPageTotal) }}</div>
                         <div class="metric-meta">
-                            <span class="text-success">+5.1%</span>
-                            <span>this month</span>
+                            <span>All registered accounts</span>
                         </div>
                     </article>
                 </div>
-
                 <div class="col-12 col-sm-6 col-xl-3">
                     <article class="metric-card metric-success">
                         <div class="metric-top">
-                            <span class="metric-label">Active</span>
-                            <span class="metric-icon"><i class="bi bi-check2-circle" aria-hidden="true"></i></span>
+                            <span class="metric-label">Customers</span>
+                            <span class="metric-icon">
+                                <i class="bi bi-person-check"></i>
+                            </span>
                         </div>
-                        <div class="metric-value">7,980</div>
+                        <div class="metric-value">{{ number_format($userPageCustomers) }}</div>
                         <div class="metric-meta">
-                            <span class="text-success">91%</span>
-                            <span>healthy accounts</span>
+                            <span>Customer accounts</span>
                         </div>
                     </article>
                 </div>
                 <div class="col-12 col-sm-6 col-xl-3">
                     <article class="metric-card metric-warning">
                         <div class="metric-top">
-                            <span class="metric-label">Pending</span>
-                            <span class="metric-icon"><i class="bi bi-hourglass-split" aria-hidden="true"></i></span>
+                            <span class="metric-label">Admins</span>
+                            <span class="metric-icon">
+                                <i class="bi bi-shield-check"></i>
+                            </span>
                         </div>
-                        <div class="metric-value">184</div>
+                        <div class="metric-value">{{ number_format($userPageAdmins) }}</div>
                         <div class="metric-meta">
-                            <span class="text-warning">12</span>
-                            <span>need approval</span>
+                            <span>Administrator accounts</span>
                         </div>
                     </article>
                 </div>
-
                 <div class="col-12 col-sm-6 col-xl-3">
                     <article class="metric-card metric-danger">
                         <div class="metric-top">
-                            <span class="metric-label">Suspended</span>
-                            <span class="metric-icon"><i class="bi bi-slash-circle" aria-hidden="true"></i></span>
+                            <span class="metric-label">New This Month</span>
+                            <span class="metric-icon">
+                                <i class="bi bi-person-plus"></i>
+                            </span>
                         </div>
-                        <div class="metric-value">38</div>
+                        <div class="metric-value">{{ number_format($userPageNewThisMonth) }}</div>
                         <div class="metric-meta">
-                            <span class="text-danger">4</span>
-                            <span>flagged today</span>
+                            <span>Registered this month</span>
                         </div>
                     </article>
                 </div>

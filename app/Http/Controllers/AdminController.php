@@ -10,6 +10,18 @@ use App\Models\Feedback;
 
 class AdminController extends Controller
 {
+    public function dashboard()
+    {
+        $revenue = Order::where('order_status', 'completed')->sum('total');
+        $orders = Order::count();
+        $customers = User::where('role', 'user')->count();
+        $tickets = Feedback::count();
+        $urgentTickets = Feedback::where('rating', '<=', 2)->count();
+        // Last 6 months reprt
+        $monthlyRevenue = Order::where('order_status', 'completed')->where('created_at', '>=', now()->subMonths(5)->startOfMonth())->selectRaw('MONTH(created_at) as month, YEAR(created_at) as year, SUM(total) as revenue')->groupBy('year', 'month')->orderBy('year')->orderBy('month')->get();
+        $recentOrders = Order::latest()->take(5)->get();
+        return view('admin.dashboard', compact('revenue', 'orders', 'customers', 'tickets', 'urgentTickets', 'monthlyRevenue', 'recentOrders'));
+    }
     public function createProduct(Request $req)
     {
         $product = new product();
@@ -33,8 +45,13 @@ class AdminController extends Controller
     }
     public function fetchProduct()
     {
+        $productPageTotal = Product::count();
         $products = product::all();
-        return view('admin.products.index', compact('products'));
+        $productPageTotal = Product::count();
+        $productPageInStock = Product::where('stock', '>', 0)->count();
+        $productPageLowStock = Product::where('stock', '>', 0)->where('stock', '<=', 10)->count();
+        $productPageOutOfStock = Product::where('stock', '<=', 0)->count();
+        return view('admin.products.index', compact('products', 'productPageTotal', 'productPageInStock', 'productPageLowStock', 'productPageOutOfStock'));
     }
     public function editProduct(Request $req)
     {
@@ -72,7 +89,11 @@ class AdminController extends Controller
     public function fetchUser()
     {
         $users = User::all();
-        return view('admin.users.index', compact('users'));
+        $userPageTotal = User::count();
+        $userPageCustomers = User::where('role', 'user')->count();
+        $userPageAdmins = User::where('role', 'admin')->count();
+        $userPageNewThisMonth = User::whereMonth('created_at', now()->month)->whereYear('created_at', now()->year)->count();
+        return view('admin.users.index', compact('users', 'userPageTotal', 'userPageCustomers', 'userPageAdmins', 'userPageNewThisMonth'));
     }
     public function editUser(Request $req)
     {

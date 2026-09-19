@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="adminHMD professional admin dashboard template">
     <title>Admin Dashboard</title>
- <!-- icons -->
+    <!-- icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="/assets-admin/css/bootstrap.min.css">
@@ -23,45 +23,40 @@
             <div class="sidebar-header">
                 <a class="brand-mark" href="index" aria-label="adminHMD dashboard">
                     <span class="brand-copy">
-                        <span class="brand-title"><a href=""><img src="{{asset('assets-admin/images/logo.png')}}"
-                                    class="w-100" alt=""></a></span>
+                        <span class="brand-title"><a href=""><img
+                                    src="{{ asset('assets-admin/images/logo.png') }}" class="w-100"
+                                    alt=""></a></span>
                     </span>
                 </a>
             </div>
 
             <nav class="sidebar-nav">
-                <a href='/admin-index' class="nav-link {{request()->is('admin-index')?'active':''}}"
-                    aria-current="page">
+                <a class="nav-link {{ request()->is('admin-index') ? 'active' : '' }}"
+                    href='{{ route('admin-dashboard') }}'aria-current="page">
                     <span class="nav-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></span>
                     <span class="nav-text">Dashboard</span>
                 </a>
-                <a class="nav-link {{request()->is('admin-users')?'active':''}}" href="{{ route('admin-users') }}">
+                <a class="nav-link {{ request()->is('admin-users') ? 'active' : '' }}"
+                    href="{{ route('admin-users') }}">
                     <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
                     <span class="nav-text">Users</span>
                 </a>
-                <a class="nav-link {{request()->is('admin-feedback')?'active':''}}" href="{{ route('admin-feedback')}}">
-                    <span class="nav-icon"><i class="bi bi-person-plus" aria-hidden="true"></i></span>
-                    <span class="nav-text">Feedback</span>
-                </a>
-                <a href="/admin-profile" class="nav-link {{request()->is('admin-profile')?'active':''}}">
-                    <span class="nav-icon"><i class="bi bi-person-badge" aria-hidden="true"></i></span>
-                    <span class="nav-text">Profile</span>
-                </a>
-                <a class="nav-link {{request()->is('admin-reports')?'active':''}}" href="/admin-reports">
-                    <span class="nav-icon"><i class="bi bi-bar-chart-line" aria-hidden="true"></i></span>
-                    <span class="nav-text">Reports</span>
-                </a>
-                <a class="nav-link {{request()->is('admin-manage-orders')?'active':''}}"
+                <a class="nav-link {{ request()->is('admin-manage-orders') ? 'active' : '' }}"
                     href="{{ route('admin-orders') }}">
                     <span class="nav-icon"><i class="bi bi-table" aria-hidden="true"></i></span>
                     <span class="nav-text">Manage Orders</span>
                 </a>
-                <a class="nav-link {{request()->is('admin-add-product')?'active':''}}"
+                <a class="nav-link {{ request()->is('admin-add-product') ? 'active' : '' }}"
                     href="{{ route('admin-product') }}">
                     <span class="nav-icon"><i class="bi bi-ui-checks-grid" aria-hidden="true"></i></span>
                     <span class="nav-text">Add Product</span>
                 </a>
-                <a class="nav-link {{request()->is('admin-settings')?'active':''}}" href="/admin-settings">
+                <a class="nav-link {{ request()->is('admin-feedback') ? 'active' : '' }}"
+                    href="{{ route('admin-feedback') }}">
+                    <span class="nav-icon"><i class="bi bi-person-plus" aria-hidden="true"></i></span>
+                    <span class="nav-text">Feedback</span>
+                </a>
+                <a class="nav-link {{ request()->is('admin-settings') ? 'active' : '' }}" href="/admin-settings">
                     <span class="nav-icon"><i class="bi bi-gear" aria-hidden="true"></i></span>
                     <span class="nav-text">Settings</span>
                 </a>
@@ -81,7 +76,8 @@
                         <span></span>
                         <span></span>
                     </button>
-                    <span class="brand-title w-25"><a href=""><img src="{{asset('assets-admin/images/logo.png')}}"
+                    <span class="brand-title w-25"><a href=""><img
+                                src="{{ asset('assets-admin/images/logo.png') }}"
                                 class="ms-3 img-fluid d-block d-lg-none" alt=""></a></span>
 
                     <div class="navbar-actions ms-auto">
@@ -124,7 +120,7 @@
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li>
-                                    <form method="POST" action="{{route('logout')}}" >
+                                    <form method="POST" action="{{ route('logout') }}">
                                         @csrf
                                         <button type="submit" class="dropdown-item">
                                             Sign out
