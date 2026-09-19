@@ -23,4 +23,5 @@ SiteSetting::updateOrCreate(
 }
 return back()->with('success','settings updated successfully.');
 }
+
 }

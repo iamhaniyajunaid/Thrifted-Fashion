@@ -1,0 +1,13 @@
+[33m1040c5f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: commit: Fix duplicate migrations and CORS middleware issue
+[33m72f255f[m HEAD@{1}: commit: Merged admin layout successfully
+[33m9f7f16d[m HEAD@{2}: pull origin main: Merge made by the 'ort' strategy.
+[33m1e59fc9[m HEAD@{3}: reset: moving to HEAD
+[33m1e59fc9[m HEAD@{4}: commit: Update admin settings
+[33m5e32f59[m HEAD@{5}: pull origin main: Fast-forward
+[33me44a688[m HEAD@{6}: reset: moving to HEAD
+[33me44a688[m HEAD@{7}: commit: updated admin panel
+[33m967933b[m[33m ([m[1;32mdevelopment[m[33m)[m HEAD@{8}: merge development: Fast-forward
+[33m29a2ed1[m HEAD@{9}: checkout: moving from development to main
+[33m967933b[m[33m ([m[1;32mdevelopment[m[33m)[m HEAD@{10}: commit: Update project
+[33m29e6ca8[m[33m ([m[1;31morigin/development[m[33m)[m HEAD@{11}: commit: Add admin panel layout, settings controller, and database migrations
+[33m29a2ed1[m HEAD@{12}: reset: moving to origin/main

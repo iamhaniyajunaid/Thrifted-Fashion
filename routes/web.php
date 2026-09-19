@@ -10,6 +10,11 @@ use App\Http\Controllers\AdminController;
 Route::get('/', function () {
     return view('admin.users.index');
 });
+//contact
+Route::get('/user-panel/contact', function () {
+    return view('user-panel.contact');
+})->name('contact');
+
 // LOG OUT
 Route::get('/admin/sign-out', function () {
     return view('admin.sign-out');

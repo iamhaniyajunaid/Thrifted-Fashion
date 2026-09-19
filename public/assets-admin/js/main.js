@@ -303,4 +303,3 @@ function syncColorPair(pickerId, textInputName) {
         syncColorPair("footer_color", "footer_color_hex");
         syncColorPair("link_color", "link_color_hex");
     });
-
