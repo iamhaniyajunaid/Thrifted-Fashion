@@ -1,7 +1,9 @@
 <x-guest-layout>
+    <div class="form-img">
+
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+             <img src="{{asset('assets-admin/images/logo.png')}}" alt="thrift fashion" class="login-logo mt-5">
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600 font-sans ">
@@ -34,4 +36,5 @@
             </div>
         </form>
     </x-authentication-card>
+</div>
 </x-guest-layout>

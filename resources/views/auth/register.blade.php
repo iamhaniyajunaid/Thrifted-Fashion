@@ -1,7 +1,9 @@
 <x-guest-layout>
+    <div class="reg-img">
+
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+             <img src="{{asset('assets-admin/images/logo.png')}}" alt="thrift fashion" class="login-logo mt-5">
             <div class="container form-card text-center mt-4">
                 <div class="mx-auto max-w-md form-head ">
                     <h1>Create Your Account</h1>
@@ -47,7 +49,7 @@
             </div>
 
             <div class="mt-4">
-                <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+                <x-label for="password_confirmation"  class="form-label" value="{{ __('Confirm Password') }}" />
                 <div class="input-wrapper">
                     <i class="fa fa-lock"></i>
                     <x-input id="password_confirmation" class="block mt-1 w-full form-input" type="password"
@@ -88,4 +90,5 @@
                 </span>Log in</a></p>
         </form>
     </x-authentication-card>
+</div>
 </x-guest-layout>
