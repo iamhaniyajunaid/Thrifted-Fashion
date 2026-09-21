@@ -1,13 +1,13 @@
-<x-form-section submit="updatePassword">
+<x-form-section submit="updatePassword" >
     <x-slot name="title">
-        {{ __('Update Password') }}
+        <h2>Update Password </h2>
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Ensure your account is using a long, random password to stay secure.') }}
+        <p>Ensure your account is using a long, random password to stay secure.</p>
     </x-slot>
 
-    <x-slot name="form">
+    <x-slot name="form" >
         <div class="col-span-6 sm:col-span-4">
             <x-label for="current_password" value="{{ __('Current Password') }}" />
             <x-input id="current_password" type="password" class="mt-1 block w-full" wire:model="state.current_password" autocomplete="current-password" />
@@ -28,11 +28,11 @@
     </x-slot>
 
     <x-slot name="actions">
-        <x-action-message class="me-3" on="saved">
+        <x-action-message class="me-3" on="saved" >
             {{ __('Saved.') }}
         </x-action-message>
 
-        <x-button>
+        <x-button class="profile-save">
             {{ __('Save') }}
         </x-button>
     </x-slot>

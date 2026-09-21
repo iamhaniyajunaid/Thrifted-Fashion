@@ -114,7 +114,7 @@
                                 <span class="profile-name d-none d-sm-inline">Admin</span>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="admin-profile">Profile</a></li>
+                                <li><a class="dropdown-item" href="{{route('profile.show')}}">Profile</a></li>
                                 <li><a class="dropdown-item" href="admin-settings">Account settings</a></li>
                                 <li>
                                     <hr class="dropdown-divider">

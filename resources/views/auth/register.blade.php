@@ -86,7 +86,7 @@
                 </x-button>
             </div>
 
-            <a href="/login" class="text-center fw-bold form-reg "><span class="fw-light"> Already have an account?
+            <a href="/login" class="text-center fw-bold form-reg  "><span class="fw-light"> Already have an account?
                 </span>Log in</a></p>
         </form>
     </x-authentication-card>
