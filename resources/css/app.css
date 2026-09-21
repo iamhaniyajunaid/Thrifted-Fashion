@@ -14,20 +14,79 @@
   --pure-white: #FFFFFF;
   --charcoal-slate: #2C352D;
 
-    /*===========font========*/
-   --font-serif: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
-  --font-sans: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    
+    /*typography*/
+       --font-serif:'Playfair Display', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
 
 
 }
 .body{
     background-color: var(--warm-cream);
 }
+.login-img{
+     background-image: url('thrifted-login-bg.png') !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    max-width:100% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.login-img > div{
+    background: transparent !important;
+box-shadow: none !important;
+width:  700px !important;
+max-width: 100% !important;
+padding: 30px;
+}
+.reg-img{
+      background-image: url('register-bg.png') !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    max-width:100% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reg-img > div{
+    background: transparent !important;
+box-shadow: none !important;
+width:  700px !important;
+max-width: 90% !important;
+padding: 30px;
+}
+.form-img{
+      background-image: url('form-bg.png') !important;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    max-width:100% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-img > div{
+    background: transparent !important;
+box-shadow: none !important;
+width:  700px !important;
+max-width: 90% !important;
+}
+.login-logo{
+    width: 200px;
+    height: auto;
+display: block;
+margin: 0 auto;
+}
 
 .form-head h1{
     color: var(--charcoal-slate);
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
     font-size: 2.5rem;
 }
 .form-head p{
@@ -38,7 +97,7 @@
 .form-label{
     color :var(--forest-green);
     font-size: 1rem;
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-weight: 550;
 }
 .input-wrapper{
@@ -82,7 +141,7 @@ color: var(--charcoal-slate);
     color: var(--pure-white);
     border-radius: 25px;
     font-size: 0.9rem;
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
 
 }
 .form-btn:hover,
@@ -108,7 +167,7 @@ color: var(--charcoal-slate);
     border-radius: 25px;
     font-size: 1rem;
     border: 2px solid rgba(145, 139, 106, 0.966);
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-weight: 600;
     padding-left: 5px;
     padding-top:12px ;
@@ -131,7 +190,7 @@ color: var(--charcoal-slate);
 }
  /* PROFILE */
 .prof-head{
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
     font-size: 2rem;
     font-weight: 600;
 }
@@ -147,7 +206,72 @@ color: var(--charcoal-slate);
     font-family: var(--font-serif);
     cursor: pointer;
 }
+
 /* .login-img{
     background-color: var(--charcoal-slate);
 } */
- 
+ .profile-section{
+
+    width: 90%;
+    margin: auto;
+    padding-right: 10px;
+    margin-right: 100px;
+ }
+ .profile-section-content{
+    width: 100%;
+    background: var(--warm-cream);
+    border: 1px solid var(--warm-cream);
+    border-left: 3px solid var(--charcoal-slate);
+    border-radius: 15px; 
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--sage-green);
+ }
+ .profile-head{
+    padding: 20px 25px 20px;
+
+ }
+ .profile-head  h2{
+    font-family: var(--font-serif) !important;
+    font-family: var(--forest-green);
+    font-size: 1.4rem;
+ }
+  .profile-head  p{
+    font-family: var(--font-sans) !important;
+    font-family: var(--charcoal-slate);
+    font-size: 0.8rem;
+ }
+ .profile-form{
+    padding: 15px 25px 20px;
+    background-color: var(--warm-cream);
+ }
+ .profile-input{
+    color: var(--forest-green);
+    border-radius: 10px;
+    border: 1px solid var(--sage-green);
+ }
+ .profile-input:focus,
+ .profile-input:active,
+ .profile-input:hover{
+     color: var(--forest-green);
+    border-radius: 10px;
+    border: 2px solid var(--sage-green);
+ }
+ .profile-label{
+    color: var(--charcoal-slate);
+    font-family: var(--font-sans);
+    font-weight: 545;
+ }
+ .profile-save{
+    background-color: var(--forest-green);
+    color: var(--warm-cream);
+    font-family: var(--font-sans);
+    border: none !important;
+
+ }
+  .profile-save:hover, 
+  .profile-save:active, 
+  .profile-save:focus {
+    background-color: var(--charcoal-slate) !important;
+    color: var(--warm-cream);
+    border: none !important;
+ }

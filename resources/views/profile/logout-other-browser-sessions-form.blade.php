@@ -1,10 +1,10 @@
 <x-action-section>
     <x-slot name="title">
-        {{ __('Browser Sessions') }}
+      <h2>  Browser Sessions</h2>
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Manage and log out your active sessions on other browsers and devices.') }}
+        <p>Manage and log out your active sessions on other browsers and devices.</p>
     </x-slot>
 
     <x-slot name="content">
@@ -52,11 +52,11 @@
         @endif
 
         <div class="flex items-center mt-5">
-            <x-button wire:click="confirmLogout" wire:loading.attr="disabled">
+            <x-button  class="profile-save" wire:click="confirmLogout" wire:loading.attr="disabled">
                 {{ __('Log Out Other Browser Sessions') }}
             </x-button>
 
-            <x-action-message class="ms-3" on="loggedOut">
+            <x-action-message class="ms-3 profile-save" on="loggedOut">
                 {{ __('Done.') }}
             </x-action-message>
         </div>
@@ -87,7 +87,7 @@
                     {{ __('Cancel') }}
                 </x-secondary-button>
 
-                <x-button class="ms-3"
+                <x-button class="ms-3 profile-save"
                             wire:click="logoutOtherBrowserSessions"
                             wire:loading.attr="disabled">
                     {{ __('Log Out Other Browser Sessions') }}

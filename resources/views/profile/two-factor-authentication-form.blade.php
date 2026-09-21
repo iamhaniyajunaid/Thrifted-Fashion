@@ -1,10 +1,11 @@
 <x-action-section>
-    <x-slot name="title">
-        {{ __('Two Factor Authentication') }}
+    <div class="profile-info">
+    <x-slot name="title" >
+      <h2 >Two Factor Authentication</h2>
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Add additional security to your account using two factor authentication.') }}
+    <p>   Add additional security to your account using two factor authentication.</p>
     </x-slot>
 
     <x-slot name="content">
@@ -20,7 +21,7 @@
             @endif
         </h3>
 
-        <div class="mt-3 max-w-xl text-sm text-gray-600">
+        <div class="my-0 max-w-xl text-sm text-gray-600">
             <p>
                 {{ __('When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone\'s Google Authenticator application.') }}
             </p>
@@ -78,27 +79,27 @@
 
         <div class="mt-5">
             @if (! $this->enabled)
-                <x-confirms-password wire:then="enableTwoFactorAuthentication">
-                    <x-button type="button" wire:loading.attr="disabled">
+                <x-confirms-password wire:then="enableTwoFactorAuthentication" class="d-block justify-end">
+                    <x-button type="button"  class="profile-save" wire:loading.attr="disabled">
                         {{ __('Enable') }}
                     </x-button>
                 </x-confirms-password>
             @else
                 @if ($showingRecoveryCodes)
                     <x-confirms-password wire:then="regenerateRecoveryCodes">
-                        <x-secondary-button class="me-3">
+                        <x-secondary-button class="me-3 profile-save">
                             {{ __('Regenerate Recovery Codes') }}
                         </x-secondary-button>
                     </x-confirms-password>
                 @elseif ($showingConfirmation)
                     <x-confirms-password wire:then="confirmTwoFactorAuthentication">
-                        <x-button type="button" class="me-3" wire:loading.attr="disabled">
+                        <x-button type="button" class="me-3 profile-save" wire:loading.attr="disabled">
                             {{ __('Confirm') }}
                         </x-button>
                     </x-confirms-password>
                 @else
                     <x-confirms-password wire:then="showRecoveryCodes">
-                        <x-secondary-button class="me-3">
+                        <x-secondary-button class="me-3 profile-save">
                             {{ __('Show Recovery Codes') }}
                         </x-secondary-button>
                     </x-confirms-password>
@@ -121,4 +122,5 @@
             @endif
         </div>
     </x-slot>
+</div>
 </x-action-section>

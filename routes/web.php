@@ -77,6 +77,7 @@ Route::middleware([
     Route::get('/user', function () {
         return view('user');
     })->middleware('role:user');
+    
 
     Route::get('/dashboard', [LoginResponse::class, 'restriction'])
         ->name('dashboard');

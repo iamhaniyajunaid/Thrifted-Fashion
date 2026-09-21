@@ -1,4 +1,20 @@
+@extends('layouts.admin-layout')
 
+@section('content')
+
+<div class="container-fluid px-3 px-lg-4 py-4">
+
+    <div class="mb-4">
+        <h2 class="fw-bold">Profile</h2>
+        <p class="text-muted">
+            Manage your profile and account settings.
+        </p>
+    </div>
+
+    {{-- Update Profile Information --}}
+    <div class="mb-4">
+        @livewire('profile.update-profile-information-form')
+        
 <x-form-section submit="updateProfileInformation" >
     <x-slot name="title">
         <h2>Profile information</h2>
@@ -66,7 +82,7 @@
             <x-input id="email" type="email" class="mt-1 block w-full" wire:model="state.email" required autocomplete="username" />
             <x-input-error for="email" class="mt-2" />
 
-            @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::emailVerification()) && ! $this->user->hasVerifiedEmail())
+           
                 <p class="text-sm mt-2">
                     {{ __('Your email address is unverified.') }}
 
@@ -94,3 +110,69 @@
         </x-button>
     </x-slot>
 </x-form-section>
+
+    </div>
+
+    {{-- Update Password --}}
+    <div class="mb-4">
+        @livewire('profile.update-password-form')
+        <x-form-section submit="updatePassword" >
+    <x-slot name="title">
+        <h2>Update Password </h2>
+    </x-slot>
+
+    <x-slot name="description">
+        <p>Ensure your account is using a long, random password to stay secure.</p>
+    </x-slot>
+
+    <x-slot name="form" >
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="current_password" value="{{ __('Current Password') }}" />
+            <x-input id="current_password" type="password" class="mt-1 block w-full" wire:model="state.current_password" autocomplete="current-password" />
+            <x-input-error for="current_password" class="mt-2" />
+        </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="password" value="{{ __('New Password') }}" />
+            <x-input id="password" type="password" class="mt-1 block w-full" wire:model="state.password" autocomplete="new-password" />
+            <x-input-error for="password" class="mt-2" />
+        </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+            <x-input id="password_confirmation" type="password" class="mt-1 block w-full" wire:model="state.password_confirmation" autocomplete="new-password" />
+            <x-input-error for="password_confirmation" class="mt-2" />
+        </div>
+    </x-slot>
+
+    <x-slot name="actions">
+        <x-action-message class="me-3" on="saved" >
+            {{ __('Saved.') }}
+        </x-action-message>
+
+        <x-button class="profile-save">
+            {{ __('Save') }}
+        </x-button>
+    </x-slot>
+</x-form-section>
+
+    </div>
+
+    {{-- Two Factor Authentication --}}
+    <div class="mb-4">
+        @livewire('profile.two-factor-authentication-form')
+    </div>
+
+    {{-- Browser Sessions --}}
+    <div class="mb-4">
+        @livewire('profile.logout-other-browser-sessions-form')
+    </div>
+
+    {{-- Delete Account --}}
+    <div class="mb-4">
+        @livewire('profile.delete-user-form')
+    </div>
+
+</div>
+
+@endsection

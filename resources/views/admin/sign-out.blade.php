@@ -23,7 +23,7 @@
         <div class="container sign-out-bg text-center ">
             <div class="logo pt-5">
                 <a href="/user">
-                    <img src="{{asset('assets-admin/images/logo.png')}}" alt="logo" width="20%">
+                    <img src="{{asset('assets-admin/images/logo.png')}}" alt="logo" >
                 </a>
             </div>
             <div class="signout-head py-4">
