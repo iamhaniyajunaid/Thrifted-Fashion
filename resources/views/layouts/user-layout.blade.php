@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
     <!-- custom css -->
-    <link rel="stylesheet" href="/assets-admin/css/style.css">
+    <link rel="stylesheet" href="/assets-admin/css/style.css'>
 
     </head>
 

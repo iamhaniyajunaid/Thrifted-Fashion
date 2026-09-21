@@ -290,16 +290,40 @@ function syncColorPair(pickerId, textInputName) {
             colorpicker.value = textInput.value;
         };
     }
-  }
-    document.addEventListener("DOMContentLoaded", function () {
-        syncColorPair("heading_color", "heading_color_hex");
-        syncColorPair("text_color", "text_color_hex");
-        syncColorPair("primary_color", "primary_color_hex");
-        syncColorPair("secondary_color", "secondary_color_hex");
-        syncColorPair("background_color", "background_color_hex");
-        syncColorPair("button_color", "button_color_hex");
-        syncColorPair("btn_text_color", "btn_text_color_hex");
-        syncColorPair("navbar_color", "navbar_color_hex");
-        syncColorPair("footer_color", "footer_color_hex");
-        syncColorPair("link_color", "link_color_hex");
+}
+document.addEventListener("DOMContentLoaded", function () {
+    syncColorPair("heading_color", "heading_color_hex");
+    syncColorPair("text_color", "text_color_hex");
+    syncColorPair("primary_color", "primary_color_hex");
+    syncColorPair("secondary_color", "secondary_color_hex");
+    syncColorPair("background_color", "background_color_hex");
+    syncColorPair("button_color", "button_color_hex");
+    syncColorPair("btn_text_color", "btn_text_color_hex");
+    syncColorPair("navbar_color", "navbar_color_hex");
+    syncColorPair("footer_color", "footer_color_hex");
+    syncColorPair("link_color", "link_color_hex");
+});
+const swiper = new Swiper(".mySwiper", {
+    loop: true,
+
+    navigation: {
+        nextEl: ".swiper-next-btn",
+        prevEl: ".swiper-prev-btn",
+    },
+    slidesPerView: 1,
+    spaceBetween: 15,
+    breakpoints: {
+        576: {
+            slidesPerView: 2,
+            spaceBetween: 15,
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 15,
+        },
+            1024: {
+                slidesPerView: 5,
+                spaceBetween: 15,
+            }
+        }
     });

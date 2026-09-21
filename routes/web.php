@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\LoginResponse;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\userController;
+
 
 
 // Home
@@ -42,6 +44,9 @@ Route::get('admin-product', [AdminController::class, 'fetchProduct'])->name('adm
 Route::post('createProduct', [AdminController::class, 'createProduct'])->name('createProduct');
 Route::post('editProduct', [AdminController::class, 'editProduct'])->name('editProduct');
 Route::post('deleteProduct', [AdminController::class, 'deleteProduct'])->name('deleteProduct');
+Route::get('product-create', function () {
+    return view('admin.products.create');
+})->name('product-create');
 
 // Users
 Route::get('admin-users', [AdminController::class, 'fetchUser'])->name('admin-users');
@@ -76,3 +81,12 @@ Route::middleware([
     Route::get('/dashboard', [LoginResponse::class, 'restriction'])
         ->name('dashboard');
 });
+// Route::get('home', function () {
+//     return view('user-panel.index');
+// })->name('home');
+Route::get('admin-reviews',[AdminController::class,'reviews'])->name('admin.reviews');
+Route::post('/admin/reviews/{id}/approve',[AdminController::class,'approveReviews'])->name('admin.reviews.approve');
+Route::post('/admin/reviews/{id}/delete',[AdminController::class,'deleteReviews'])->name('admin.reviews.delete');
+Route::get('home',[userController::class,'index'])->name('home');
+Route::post('home',[userController::class,'storeReview'])->name('reviews.store');
+

@@ -31,7 +31,7 @@
             </div>
 
             <nav class="sidebar-nav">
-                <a class="nav-link {{ request()->is('admin-index') ? 'active' : '' }}"
+                <a class="nav-link {{ request()->is('admin-dashboard') ? 'active' : '' }}"
                     href='{{ route('admin-dashboard') }}'aria-current="page">
                     <span class="nav-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></span>
                     <span class="nav-text">Dashboard</span>
@@ -55,6 +55,17 @@
                     href="{{ route('admin-feedback') }}">
                     <span class="nav-icon"><i class="bi bi-person-plus" aria-hidden="true"></i></span>
                     <span class="nav-text">Feedback</span>
+                </a>
+                <a class="nav-link {{ request()->is('admin-reviews') ? 'active' : '' }}"
+                    href="{{ route('admin.reviews') }}">
+                    <span class="nav-icon"><i class="bi bi-person-plus" aria-hidden="true"></i></span>
+                    <span class="nav-text">Reviews</span>
+                </a>
+                
+                <a class="nav-link {{ request()->is('admin-users') ? 'active' : '' }}"
+                    href="{{ route('admin-users') }}">
+                    <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                    <span class="nav-text">Users</span>
                 </a>
                 <a class="nav-link {{ request()->is('admin-settings') ? 'active' : '' }}" href="/admin-settings">
                     <span class="nav-icon"><i class="bi bi-gear" aria-hidden="true"></i></span>

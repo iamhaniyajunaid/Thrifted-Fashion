@@ -11,7 +11,7 @@
                         <p class="text-muted mb-0">Review products, categories, brands, pricing.</p>
                     </div>
                 </div>
-                <div class="heading-actions"><a class="btn btn-primary btn-sm" href="{{ route('product-create') }}"><i
+                <div class="heading-actions"><a class="btn btn-primary btn-sm" href="{{ route('createProduct') }}"><i
                             class="bi bi-person-plus" aria-hidden="true"></i> Add Product</a></div>
             </div>
             <section class="row g-3 mt-1" aria-label="Product summary">
@@ -82,7 +82,7 @@
                     <div class="d-flex flex-wrap gap-2">
                         <input class="form-control form-control-sm table-search" type="search" placeholder="Search users"
                             data-table-search="usersTable" aria-label="Search users">
-                        <a class="btn btn-primary btn-sm" href="{{ route('product-create') }}"><i class="bi bi-person-plus"
+                        <a class="btn btn-primary btn-sm" href="{{ route('createProduct') }}"><i class="bi bi-person-plus"
                                 aria-hidden="true"></i> Add Product</a>
                     </div>
                 </div>

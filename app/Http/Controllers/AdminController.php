@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\User;
+use App\Models\Review;
 use App\Models\Order;
 use App\Models\Feedback;
 
@@ -168,5 +169,23 @@ class AdminController extends Controller
         $feedback = Feedback::find($req->id);
         $feedback->delete();
         return redirect()->route('admin-feedback');
+    }
+    public function reviews()
+    {
+        $reviews = Review::latest()->paginate(10);
+        return view('admin.reviews.reviews', compact('reviews'));
+    }
+    public function approveReviews($id)
+    {
+        $review = Review::find($id);
+        $review->is_approved = true;
+        $review->save();
+        return back();
+    }
+    public function deleteReviews($id)
+    {
+        $review = Review::find($id);
+        $review->delete();
+        return back();
     }
 }
